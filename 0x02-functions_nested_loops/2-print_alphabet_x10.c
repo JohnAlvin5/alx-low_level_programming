@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_alphabet_x10 - writes the character c to stdout
  *
- * Return: Always 0.
  *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-/* print_alphabet() : 'Prints the aphabetical letters' */
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	int i, l;
 
