@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
  * _islower - writes the character c to stdout
@@ -9,7 +10,7 @@
  */
 int _islower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (islower(c))
 	{
 		_putchar(1);
 	} else
