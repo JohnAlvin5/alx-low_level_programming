@@ -9,10 +9,21 @@
  */
 int print_last_digit(int n)
 {
-	while (n >= 10)
-		n = n % 10;
+	int cnt;
+	int dig;
+	cnt = 0;
+	n = int j;
 
-	_putchar(n);
+	while (j >= 10)
+	{
+		j = j % 10;
+		cnt = cnt + 1;
+	}
 
-	return (n);
+	dig = n % (10 * cnt);
+
+	_putchar(dig);
+	_putchar(dig);
+
+	return (dig);
 }
