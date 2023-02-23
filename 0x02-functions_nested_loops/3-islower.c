@@ -9,7 +9,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _islower(int c)
-{	
+{
 	if (islower(c))
 		return (1);
 	else
