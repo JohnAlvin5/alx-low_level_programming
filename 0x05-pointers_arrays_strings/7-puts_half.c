@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * puts2 - writes the character c to stdout
+ * puts_half - writes the character c to stdout
  * @str : The character to print
  *
  * Return: On success 1.
