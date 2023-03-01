@@ -2,24 +2,34 @@
 #include <ctype.h>
 
 /**
- * string_toupper - writes the character c to stdout
+ * cap_string - writes the character c to stdout
  * @c : The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-char *string_toupper(char *c)
+char *cap_string(char *c)
 {
 	int i;
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		if (c[i] >= 'a' && c[i] <= 'z')
+		if (i == 0)
 		{
-			c[i] = toupper(c[i]);
+			if (c[i] >= 'a' && c[i] <= 'z')
+				c[i] = toupper(c[i]);
+			continue;
+		}
+		if (c[i] == ' '/* || c[i] == '"' || c[i] == '('*/)
+		{
+			i++;
+			if (c[i] >= 'a' && c[i] <= 'z')
+			{
+				c[i] = toupper(c[i]);
+				continue;
+			}
 		}
 	}
 
 	return (c);
-
 }
