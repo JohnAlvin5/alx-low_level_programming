@@ -20,13 +20,15 @@ char *cap_string(char *c)
 				c[i] = toupper(c[i]);
 			continue;
 		}
-		if (c[i] == ' '/* || c[i] == '"' || c[i] == '('*/)
+		if (c[i] == ' ' || c[i] == '\n' || c[i] == '\t' || c[i] == '.' || c[i] == '"')
 		{
+			if (c[i] == '\t')
+				c[i] = ' ';
+
 			i++;
 			if (c[i] >= 'a' && c[i] <= 'z')
 			{
 				c[i] = toupper(c[i]);
-				continue;
 			}
 		}
 	}
