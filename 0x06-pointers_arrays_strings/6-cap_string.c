@@ -20,7 +20,7 @@ char *cap_string(char *c)
 				c[i] = toupper(c[i]);
 			continue;
 		}
-		if (c[i] == ' ' || c[i] == '\n' || c[i] == '.\n' || c[i] == '\t' 
+		if (c[i] == ' ' || c[i] == '\n' || c[i] == '-' || c[i] == '\t' 
 				|| c[i] == '.' || c[i] == '"')
 		{
 			if (c[i] == '\t')
