@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_diagsum - writes the character c to stdout
+ * print_diagsums - writes the character c to stdout
  * @a : The character to print
  * @size : second
  *
