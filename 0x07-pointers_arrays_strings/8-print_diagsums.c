@@ -12,8 +12,6 @@
 void print_diagsums(int *a, int size)
 {
 	int i, j, sum1, sum2;
-	int diag1[50];
-	int diag2[50];
 
 	sum1 = sum2 = 0;
 
@@ -23,12 +21,10 @@ void print_diagsums(int *a, int size)
 		{
 			if (i == j)
 			{
-				diag1[i] = a[i][j];
 				sum1 = sum1 + a[i][j];
 			}
 			else if (j == (size - i))
 			{
-				diag2[i] = a[i][j];
 				sum2 = sum2 + a[i][j];
 			}
 			else
