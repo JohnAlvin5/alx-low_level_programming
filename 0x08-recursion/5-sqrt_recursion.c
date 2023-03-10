@@ -22,7 +22,7 @@ int _sqrt(int n, int x)
 }
 
 /**
- * _sqrt_recusion - writes the character c to stdout
+ * _sqrt_recursion - writes the character c to stdout
  * @n : The character to print
  *
  * Return: On success 1.
