@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _prints_rev_recursion - writes the character c to stdout
+ * _print_rev_recursion - writes the character c to stdout
  * @s : The character to print
  *
  * Return: On success 1.
