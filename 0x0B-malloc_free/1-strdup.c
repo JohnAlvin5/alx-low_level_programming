@@ -15,7 +15,7 @@ char *_strdup(char *str)
 	int len;
 	char *str2;
 
-	if (str = NULL)
+	if (str == NULL)
 		return (NULL);
 
 	len = strlen(str) + 1;
