@@ -1,8 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * strdup - writes the character c to stdout
+ * _strdup - writes the character c to stdout
  * @str : The character to print
  *
  * Return: On success 1.
@@ -10,3 +11,22 @@
  */
 char *_strdup(char *str)
 {
+	int i;
+	int len;
+	char *str2;
+
+	len = strlen(str);
+
+	str2 = malloc(sizeof(char) * len);
+
+	if (str == NULL || str2 == NULL)
+		return (NULL);
+
+	for (i = 0; i <= len; i++)
+	{
+		str2[i] = str[i];
+	}
+
+	return (str2);
+	free(str2);
+}
