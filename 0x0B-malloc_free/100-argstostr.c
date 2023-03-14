@@ -11,3 +11,20 @@
  */
 char *argstostr(int ac, char **av)
 {
+	int i;
+	char **str;
+
+	str = malloc(sizeof(av) * ac);
+
+	if (ac == 0 || av == 0 || str == NULL)
+		return (0);
+
+	for (i = 0; i < ac; i++)
+	{
+		str[i] = av[i];
+	}
+	str[i] = '\0';
+
+	return (*str);
+	free(str);
+}

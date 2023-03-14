@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+#include <stdlib.h>
 
 /**
  * free_grid - writes the character c to stdout
@@ -11,3 +11,10 @@
  */
 void free_grid(int **grid, int height)
 {
+	int y;
+
+	for (y = 0; y < height; y++)
+		free(grid[y]);
+
+	free(grid);
+}
