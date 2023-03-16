@@ -11,20 +11,13 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-/*	unsigned int i;*/
-
 	unsigned int *str;
 
-	str = (unsigned int *)malloc(nmemb * size);
+	str = malloc(nmemb * size);
 
 	if (str == NULL || nmemb == 0 || size == 0)
 		return (NULL);
 
-/**	for (i = 0; i < nmemb; i++)
- *	{
- *		str[i] = 0;
- *	}
- */
 	return (str);
 	free(str);
 
