@@ -25,7 +25,6 @@ char *leet(char *s)
 			s[i] = '1';
 		else
 			continue;
-
 	}
 
 	return (s);
