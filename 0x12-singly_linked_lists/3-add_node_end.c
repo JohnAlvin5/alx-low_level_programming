@@ -23,19 +23,19 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 
 	new->len = strlen(str);
-	
+
 	new->next = NULL;
 	if (*head == NULL)
 	{
 		*head = new;
 		return (new);
 	}
-	
+
 	current = *head;
 	while (current->next != NULL)
 		current = current->next;
 
 	current->next = new;
 
-	return(new);
+	return (new);
 }
