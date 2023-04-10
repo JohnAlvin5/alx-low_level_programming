@@ -8,3 +8,26 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
+	unsigned int x, i, binary, base;
+
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		if ((b[i] != '0' && b[i] != '1') || !b)
+			return (0);
+	}
+
+	x = atoi(b);
+	base = 1;
+	binary = 0;
+
+	for (i = 0; x > 0; i++)
+	{
+		if (x & 1)
+			binary += (1 * base);
+
+		x = x / 10;
+		base = base * 2;
+	}
+
+	return (binary);
+}
