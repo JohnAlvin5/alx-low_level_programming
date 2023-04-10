@@ -22,9 +22,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	fp = open(filename, O_RDONLY);
 	read_no = read(fp, str, letters);
-	print_no = write(STDOUT_FILENO, str, letters);
+	print_no = write(STDOUT_FILENO, str, read_no);
 
-	if (fp == -1 || read_no == -1 || print_no == -1 || read_no != print_no)
+	if (fp == -1 || print_no == -1 || read_no != print_no)
 	{
 		free(str);
 		return (0);
