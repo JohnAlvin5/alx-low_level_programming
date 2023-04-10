@@ -23,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
 	base = 1;
 	binary = 0;
 
-	for (i = 1; x > 0; i++)
+	for (i = 0; x > 0; i++)
 	{
 		if (x & 1)
 			binary += (1 * base);
