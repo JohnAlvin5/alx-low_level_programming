@@ -10,3 +10,28 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	char *str;
+	ssize_t fp, read_no, print_no;
+
+	if (!filename)
+		return (0);
+
+	str = malloc(sizeof(char) * letters);
+	if (!str)
+		return (0);
+
+	fp = open(filename, O_RDONLY);
+	read_no = read(fp, str, letters);
+	print_no = write(STDOUT_FILENO, str, letters);
+
+	if (fp == -1 || read_no == -1 || print_no == -1 || read_no != print_no)
+	{
+		free(str);
+		return (0);
+	}
+
+	free(str);
+	close(fp);
+
+	return (print_no);
+}
