@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * error - deals with tructure of error messages
+ * @mesg : error message to print
+ * @xtcod : exit code to return
+ *
+ * Return: void
+ */
 void error(char *mesg, int xtcod)
 {
 	dprintf(STDERR_FILENO, mesg, xtcod);
@@ -8,7 +15,7 @@ void error(char *mesg, int xtcod)
 }
 
 /**
- * coppies the content of a file to another file
+ * copy - copies the content of a file to another file
  * @file_from : source file
  * @file_to : destination file
  *
