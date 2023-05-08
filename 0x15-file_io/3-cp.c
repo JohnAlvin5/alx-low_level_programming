@@ -51,7 +51,7 @@ void close_file(int fp)
 
 int main(int argc, char *argv[])
 {
-	int src, dest, read_count, write_count;
+	int file_from, file_to, read_count, write_count;
 	char *buffer;
 
 	if (argc != 3)
@@ -62,12 +62,12 @@ int main(int argc, char *argv[])
 
 	buffer = buffer_alloc(argv[2]);
 
-	src = open(argv[1], O_RDONLY);
-	read_count = read(src, buffer, 1024);
+	file_from = open(argv[1], O_RDONLY);
+	read_count = read(file_from, buffer, 1024);
 
 	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	do {
-		if (src == -1 || read_count == -1)
+		if (file_from == -1 || read_count == -1)
 		{
 			dprintf(STDERR_FILENO,
 					"Error: Can't read from file %s\n", argv[1]);
@@ -76,8 +76,8 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		write_count = write(dest, buffer, read_count);
-		if (dest == -1 || write_count == -1)
+		write_count = write(file_to, buffer, read_count);
+		if (file_to == -1 || write_count == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 
@@ -85,13 +85,13 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		read_count = read(src, buffer, 1024);
+		read_count = read(file_from, buffer, 1024);
 
-		dest = open(argv[2], O_WRONLY | O_APPEND);
+		file_to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (read_count > 0);
 
-	close_file(src);
-	close_file(dest);
+	close_file(file_from);
+	close_file(file_to);
 
 	free(buffer);
 
