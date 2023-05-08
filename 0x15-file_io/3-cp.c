@@ -4,7 +4,7 @@ char *buffer_alloc(char *filename);
 void close_file(int fp);
 
 /**
- * buffer_alloc - Allocates bytes to be used by the buffer.
+ * buffer_alloc - Allocates memory space for buffer
  * @filename: Name of the file
  *
  * Return: Buffer allocated
@@ -27,6 +27,8 @@ char *buffer_alloc(char *filename)
 /**
  * close_file - Closes file
  * @fp: File description file
+ *
+ * Return: void
  */
 
 void close_file(int fp)
@@ -65,7 +67,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	read_count = read(file_from, buffer, 1024);
 
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	do {
 		if (file_from == -1 || read_count == -1)
 		{
