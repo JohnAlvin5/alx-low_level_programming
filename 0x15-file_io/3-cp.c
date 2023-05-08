@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	read_count = read(file_from, buffer, 1024);
 
-	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	do {
 		if (file_from == -1 || read_count == -1)
 		{
