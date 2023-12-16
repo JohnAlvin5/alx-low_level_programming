@@ -5,9 +5,9 @@
  *	the Linear search algorithm
  * @array: input array
  * @size: size of the array
- * @value: value to search in
+ * @value: value to search
  *
- * Return: 0
+ * Return: index of value
  */
 int linear_search(int *array, size_t size, int value)
 {
@@ -19,6 +19,7 @@ int linear_search(int *array, size_t size, int value)
 	for (i = 0; i < (int)size; i++)
 	{
 		printf("Value checked array[%u] = [%d]\n", i, array[i]);
+
 		if (value == array[i])
 			return (i);
 	}
