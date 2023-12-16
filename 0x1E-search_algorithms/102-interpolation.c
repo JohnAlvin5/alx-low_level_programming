@@ -18,7 +18,7 @@ int interpolation_search(int *array, size_t size, int value)
 
 	while (left <= right)
 	{
-		posit = left + (((double)(right - left) / (array[right] - 
+		posit = left + (((double)(right - left) / (array[right] -
 					array[left])) * (value - array[left]));
 
 		if (posit < size)

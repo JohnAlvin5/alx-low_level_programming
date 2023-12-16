@@ -20,11 +20,11 @@ int advanced_binary(int *array, size_t size, int value)
 	{
 		i = left + (right - left) / 2;
 		printf("Searching in array: %d", array[left]);
-		
+
 		for (j = left + 1; j <= right; j++)
 			printf(", %d", array[j]);
 		printf("\n");
-		
+
 		if (array[i] == value)
 		{
 			if (i == left || array[i - 1] != value)
